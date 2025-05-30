@@ -1,0 +1,48 @@
+{
+    "rules": [
+        {
+            "name": "题目数字标记",
+            "pattern": "^题目\\d+",
+            "priority": 1,
+            "description": "以'题目'开头，后面跟着数字的格式作为新题目的标记"
+        },
+        {
+            "name": "题目组卷标记",
+            "pattern": "^题目\\*\\d+",
+            "priority": 1,
+            "description": "以'题目*'开头，后面跟着组卷题号的格式作为新题目的标记"
+        },
+        {
+            "name": "题目原始标记",
+            "pattern": "^\\d+\\.\\s",
+            "priority": 1,
+            "description": "以数字和点号开头，后面跟着空格的格式作为新题目的标记"
+        },
+        {
+            "name": "数字顿号标记",
+            "pattern": "^\\d+、",
+            "priority": 2,
+            "description": "以数字和顿号开头的行作为新题目的标记"
+        },
+        {
+            "name": "数字空格标记",
+            "pattern": "^\\d+\\s",
+            "priority": 2,
+            "description": "以数字和空格开头的行作为新题目的标记"
+        }
+    ],
+    "content_rules": [
+        {
+            "name": "排除页眉页脚",
+            "pattern": "^(Header|Footer)",
+            "action": "exclude",
+            "description": "排除页眉页脚内容"
+        },
+        {
+            "name": "排除空行",
+            "pattern": "^\\s*$",
+            "action": "exclude",
+            "description": "排除空行"
+        }
+    ]
+} 
